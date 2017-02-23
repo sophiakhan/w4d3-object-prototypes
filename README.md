@@ -10,29 +10,52 @@ Inheritance encourages you to try to predict the future - this can be an issue w
 
 Composition (used with prototypal inheritance) allows you to be more flexible and dynamic. If a client surprises you with a sudden change, it won't be necessary to re-write and re-structure entire blocks of code. 
 
-#### Breaking it down further:
+### Breaking it down further:
 
-__Inheritance__ 
+__Class Inheritance__ 
+Instances inherit from a blueprint aka the class and create sub-classes. 
 
 Pros: 
-*Seems very straight forward, can be used quite literally
-*Good for the smallest of small projects (with no plans to grow)
+* Seems very straight forward, can be used quite literally
+* Good for the smallest of small projects (with no plans to grow)
 
 Cons: 
-*Unnecessarily creating parent objects that don't actually apply to all the children objects
-*Duplicating functionality (thus, creating unnecesary redundantcies) 
-*forces you to attempt to predict the future
+* Unnecessarily creating parent objects that don't actually apply to all the children objects
+* Duplicating functionality (thus, creating unnecesary redundantcies) 
+* Forces you to attempt to predict the future
+* Easy to break when classes are modified
 
-__Prototypal Instance__ - Objects inherit directly from other objects.
+For example: 
+
+class House {
+  constructor ({ paint = 'yellow', material = 'brick', floors = '2' } = {}) {
+    Object.assign(this, {
+      paint, material, floors
+    });
+  }
+}
+
+class ChildhoodHouse extends House {
+  constructor (options = {}) {
+    super(options);
+    this.location = options.location;
+  }
+}
+}
+
+
+
+__Prototypal Inheritance__
+Objects inherit directly from other objects or instances inherit from other instances. 
 
 Pros:
-*Accept their state as a function perameter, so different objects can share the same state
+* Accept their state as a function perameter, so different objects can share the same state
 
 Cons:
-
+* ???
 
 
 
 ###### codepen links:
-[class inheritance] 
-[prototypal inheritance]
+[class inheritance] http://codepen.io/sophiakhan/pen/MpgxXr?editors=0010
+[prototypal inheritance] http://codepen.io/sophiakhan/pen/GWKeBJ?editors=0010
