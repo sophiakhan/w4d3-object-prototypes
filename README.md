@@ -25,31 +25,13 @@ Cons:
 * Forces you to attempt to predict the future
 * Easy to break when classes are modified
 
-For example: 
 
-class House {
-  constructor ({ paint = 'yellow', material = 'brick', floors = '2' } = {}) {
-    Object.assign(this, {
-      paint, material, floors
-    });
-  }
-}
-
-class ChildhoodHouse extends House {
-  constructor (options = {}) {
-    super(options);
-    this.location = options.location;
-  }
-}
-}
-
-
-
-__Prototypal Inheritance__
+__Prototypal Inheritance__ <br>
 Objects inherit directly from other objects or instances inherit from other instances. 
 
 Pros:
 * Accept their state as a function perameter, so different objects can share the same state
+* Classes only need to inherit the properties they need
 
 Cons:
 * ???
@@ -58,4 +40,5 @@ Cons:
 
 ###### codepen links:
 [class inheritance] http://codepen.io/sophiakhan/pen/MpgxXr?editors=0010
+<br>
 [prototypal inheritance] http://codepen.io/sophiakhan/pen/GWKeBJ?editors=0010
